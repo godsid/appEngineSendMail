@@ -18,21 +18,21 @@ import webapp2
 from google.appengine.api import mail
 
 class MainHandler(webapp2.RequestHandler):
-    def post(self):
-        self.response.write(""" 
+    def get(self):
+        self.response.write("""<pre> 
 			Example:<br/>
 				URL: http://samartwebservice.appspot.com/mail<br/>
 				METHOD: POST<br/>
 				Parameter:<br/>
-						sender*	:	Email of Sender<br/>
-						to*			:	Destination email address<br/>
+						sender*		:	Email of Sender<br/>
+						to*		:	Destination email address<br/>
 						subject	*	:	Subject of Email<br/>
-						cc				:	Destination email address on CC<br/>
-						bcc			:	Destination email address on BCC<br/>
+						cc		:	Destination email address on CC<br/>
+						bcc		:	Destination email address on BCC<br/>
 						reply_to	:	Email to reply this mail<br/>
 						body		:	Email message <br/>
 						ishtml		:	Email message is html <br/>
-						attachments : Email attachments files<br/>
+						attachments	:	Email attachments files<br/></pre>
 		""")
 class SendMail(webapp2.RequestHandler):
 	def post(self):
